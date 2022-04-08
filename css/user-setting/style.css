@@ -1,0 +1,33 @@
+@import '../setup/vars.css';
+@import '../basic/basic.css';
+@import '../basic/helpers.css';
+.main-container {
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    /* flex-direction: column; */
+    width: 30vh;
+    margin: 70px auto;
+    gap: 50px;
+}
+
+.main-container>* {
+    background-color: silver;
+    padding: 5px;
+    width: 100%;
+}
+
+.back-container {
+    color: var(--clr-primary);
+    margin: auto;
+    padding-inline: 2rem;
+    padding-block: 2rem;
+    text-align: center;
+}
+
+.back-container a {
+    background-color: var(--clr-secondary);
+    padding: 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--clr-primary);
+}

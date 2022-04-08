@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/basic/basic.css">
+    <link rel="stylesheet" href="css/basic/helpers.css">
+    <link rel="stylesheet" href="css/setup/vars.css">
+
+    <link rel="stylesheet" href="css/map/style.css">
+    <title>Map</title>
+</head>
+
+<body>
+    <main class="main-container flex">
+        <div class="map-wrapper"></div>
+        <div class="placelist-wrapper"></div>
+
+    </main>
+
+    <script src="./vendors/jquery.min.js"></script>
+    <script src="./vendors/jquery.min.map"></script>
+
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/setting.service.js"></script>
+
+    <script src="js/util.controller.js"></script>
+    <script src="js/map.controller.js"></script>
+
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCnlSCOcVKIr7Ky0UmfeSlOBoX9OydSa-g&callback=initMap"></script>
+
+</body>
+
+</html>

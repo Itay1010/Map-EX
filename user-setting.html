@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user-setting/style.css">
+    <title>Settings</title>
+</head>
+
+<body>
+    <section class="back-container">
+        <a href="index.html" class="clear-anchor">Back</a>
+    </section>
+    <form name="user-setting" onsubmit="onSubmit(event)" class="main-container flex text-center">
+        <section>
+            <label for="email" title="Email">E-mail</label>
+            <input type="email" name="email" id="email" placeholder="Example@mail.com" required>
+        </section>
+
+        <section>
+            <label for="age" title="Age">Age</label>
+            <input type="range" min="18" max="120" name="age" id="age" value="18" onchange="renderAge(value)"> <span
+                class="curr-age">18</span>
+        </section>
+
+        <section>Colors -</section>
+
+        <section>
+            <label for="bg-color" title="Background Color">Set Background Color</label>
+            <input type="color" id="bg-color">
+        </section>
+
+        <section>
+            <label for="txt-color" title="Text Color">Set Text Color</label>
+            <input type="color" id="txt-color">
+        </section>
+
+        <section>
+            <label for="b-date" title="Date">Birth Date</label>
+            <input type="date" id="b-date">
+        </section>
+
+        <section>
+            <label for="b-time" title="Time">Birth Time</label>
+            <input type="time" id="b-time">
+        </section>
+
+        <button type="submit" class="btn">Set</button>
+    </form>
+
+    <footer>
+
+    </footer>
+
+    <script src="./vendors/jquery.min.js"></script>
+    <script src="./vendors/jquery.min.map"></script>
+
+    <script src="js/services/storage.service.js"></script>
+    <script src="js/services/setting.service.js"></script>
+
+    <script src="js/util.controller.js"></script>
+    <script src="js/setting.controller.js"></script>
+</body>
+
+</html>
