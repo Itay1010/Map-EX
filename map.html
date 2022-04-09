@@ -14,20 +14,27 @@
 </head>
 
 <body>
+    <a href="index.html" class="back">Back</a>
     <main class="main-container text-center flex justify-center">
         <div class="map-wrapper">
             <div id="map"></div>
             <button onclick="onCenterView()" id="center-btn"><i class="fa-solid fa-crosshairs"></i></button>
-
+            
         </div>
-        <div class="placelist-container text-center flex justify-center">
+        <aside class="placelist-container text-center flex">
             <section class="title">
                 <h3>Saved locations</h3>
             </section>
-            <div class="placelist-wrapper"></div>
-        </div>
-
+            <div class="placelist-wrapper">
+            </div>
+            <a href="#" class="csv" onclick="downloadCSV(this)" download="Locations.CSV" >
+                <h3>Download CSV</h3>
+            </a>
+        </aside>
     </main>
+    <footer>
+        Cofferight © 2022 - Itay Zonshine
+    </footer>
 
     <script src="./vendors/jquery.min.js"></script>
     <script src="./vendors/jquery.min.map"></script>

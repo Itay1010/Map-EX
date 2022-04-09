@@ -28,3 +28,8 @@
     height: 50px;
     cursor: pointer;
 }
+
+.csv {
+    align-self: center;
+    width: 8em;
+}

@@ -5,6 +5,7 @@ function init() {
     applyColors(document.querySelector(':root'))
     creatLocations()
     applyMarkers()
+    renderPlaces()
 }
 
 function initMap() {
@@ -34,7 +35,6 @@ function onCenterView() {
         (position) => {
             const center = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
             window.mainMap.setCenter(center)
-
         },
         () => {
             alert('Failed to get location.\nYour browser might not support HTML5.')
@@ -44,24 +44,50 @@ function onCenterView() {
 function clickHandle(ev) {
     let posName = prompt('Enter location name')
     if (!posName) return
-    new google.maps.Marker({
+    const marker = new google.maps.Marker({
         position: ev.latLng,
         map: mainMap,
         title: posName,
+        label: posName[0].toUpperCase()
     })
-    saveLocation(ev, posName)
+    saveLocation(ev, posName, marker)
+    renderPlaces()
 }
 
 function applyMarkers() {
+    const markers = {}
     const savedLocations = getLocations()
-    
     if (!savedLocations) return
-    savedLocations.forEach((loc) => {
-        new google.maps.Marker({
+    savedLocations.map((loc) => {
+        markers[loc.id] = new google.maps.Marker({
             position: { lat: loc.lat, lng: loc.lng },
             map: mainMap,
             title: loc.placeName,
-            label: loc.placeName[0]
+            label: loc.placeName[0].toUpperCase()
         })
     })
+    console.log('markers', markers)
+    setMarkers(markers)
+}
+
+function onToLocation() {
+    console.log('moving to location')
+}
+
+function onDelete(ev, el) {
+    ev.stopPropagation()
+    const id = el.dataset.id
+    removeMarker(id)
+    deletePlace(id)
+    renderPlaces()
+}
+
+function removeMarker(id) {
+    getMarkerById(id).setMap(null)
+    deleteMarker(id)
+}
+
+function downloadCSV(elLink) {
+    const csvContent = getAsCSV()
+    elLink.href = 'data:text/csv;charset=utf-8,' + csvContent
 }
