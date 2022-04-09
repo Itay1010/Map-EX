@@ -3,6 +3,8 @@
 
 function saveSetting(ev) {
     let setting = {}
+    console.log('ev', ev.target)
+
     setting['--clr-bg'] = ev.target['bg-color'].value
     setting['--clr-primary'] = ev.target['txt-color'].value
     setting['b-date'] = ev.target['b-date'].value
@@ -16,8 +18,7 @@ function saveSetting(ev) {
 function formatSetting() {
     const setting = getSetting()
     const newSetting = Object.keys(setting).map((key) => [String(key), setting[String(key)]]);
-    console.log(newSetting.flat());
-    return newSetting.flat() 
+    return newSetting.flat()
 }
 
 function getSetting() {

@@ -6,6 +6,10 @@
     display: flex;
 }
 
+.flex.justify-center {
+    justify-content: center;
+}
+
 .clear-anchor {
     text-decoration: none;
 
