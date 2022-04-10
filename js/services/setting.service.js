@@ -2,7 +2,7 @@
 
 
 function saveSetting(ev) {
-    let setting = {}
+    const setting = {}
     console.log('ev', ev.target)
 
     setting['--clr-bg'] = ev.target['bg-color'].value
